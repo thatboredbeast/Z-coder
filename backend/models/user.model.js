@@ -14,14 +14,17 @@ const userSchema = new mongoose.Schema(
     techStack: {
       type:String,
       default: "",
+      required: true,
     },
     competetiveRating: {
-      type: Object,
+      type: String,
       default: "",
+      required: true,
     },
     favouriteLanguage: {
       type: String,
       default: "",
+      required: true,
     },
     password: {
       type: String,

@@ -29,11 +29,11 @@ export const signup = async (req, res) => {
     const newUser = new User({
       fullName,
       username,
-      password: hashedPassword,
-      gender,
       techStack,
       competetiveRating,
       favouriteLanguage,
+      password: hashedPassword,
+      gender,
       profilePic: gender === "male" ? maleProfilePic : femaleProfilePic,
     });
     if (newUser) {
