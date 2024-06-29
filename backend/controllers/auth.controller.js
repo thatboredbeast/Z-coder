@@ -25,7 +25,7 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, salt);
     //Placeholder avatar
     const maleProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
-    const femaleProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
+    const femaleProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
     const newUser = new User({
       fullName,
       username,
@@ -78,7 +78,7 @@ export const login = async (req, res) => {
       _id: user._id,
       fullName: user.fullName,
       username: user.username,
-      profilePicture: user.profilePic,
+      profilePic: user.profilePic,
     });
   } catch (error) {
     console.log("Error in login controller", error.message);
