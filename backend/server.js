@@ -6,11 +6,10 @@ import connectToMongoDB from "./db/connectToMongoDB.js";
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
 import userRoutes from "./routes/user.routes.js"
-
+import {app,server} from "./socket/socket.js";
 
 dotevn.config();
 
-const app = express();
 const PORT = process.env.PORT || 9000;
 
 app.use(express.json());    //to extract fields from {fullName,user..etc} from auth.controller.js OR
@@ -21,7 +20,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/users", userRoutes);
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   connectToMongoDB();
   console.log(`listening to port:${PORT}`);
 });
