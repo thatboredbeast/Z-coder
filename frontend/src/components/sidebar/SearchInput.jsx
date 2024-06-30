@@ -19,7 +19,6 @@ const SearchInput = () => {
         c.favouriteLanguage.toLowerCase().includes(search.toLowerCase())
       );
     });
-    console.log(conversation);
     if (conversation) {
       setSelectedConversation(conversation);
       setSearch("");
