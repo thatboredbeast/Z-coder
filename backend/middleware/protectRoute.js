@@ -4,21 +4,21 @@ const protectRoute = async (req, res, next) => {
   try {
     const token = req.cookies.jwt;
     if (!token) {
-      return res.staus(401).json({ error: "unauthorized - no token provided" });
+      return res.status(401).json({ error: "unauthorized - no token provided" });
     }
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (!decoded) {
-      return res.staus(401).json({ error: "unauthorized - Invalid token" });
+      return res.status(401).json({ error: "unauthorized - Invalid token" });
     }
     const user = await User.findById(decoded.userId).select("-password");
     if (!decoded) {
-      return res.staus(404).json({ error: "User not found" });
+      return res.status(404).json({ error: "User not found" });
     }
     req.user = user;
     next();
   } catch (error) {
     console.log("error in protectRoute middleware: ", error.message);
-    res.staus(500).json({ error: "internal server error" });
+    res.status(500).json({ error: "internal server error" });
   }
 };
 export default protectRoute;
