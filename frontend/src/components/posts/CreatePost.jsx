@@ -17,7 +17,6 @@ const CreatePost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(inputs);
     await createPost(inputs);
     if(inputs.code.length === 0 || inputs.question.length === 0 || inputs.privacy.length === 0){
       return;

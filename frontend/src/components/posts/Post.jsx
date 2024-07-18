@@ -7,6 +7,7 @@ import { toast } from "react-hot-toast";
 import { useAuthContext } from "../../context/AuthContext";
 import { formatPostDate } from "../../utils/date";
 
+
 const Post = ({ post }) => {
   const [comment, setComment] = useState("");
   const { authUser } = useAuthContext();

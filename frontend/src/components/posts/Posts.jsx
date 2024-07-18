@@ -3,6 +3,7 @@ import PostSkeleton from "../skeletons/PostSkeleton";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect } from "react";
 import { useAuthContext } from "../../context/AuthContext";
+
 const Posts = ({ feedType }) => {
   const { authUser } = useAuthContext();
   const getPostEndpoint = () => {

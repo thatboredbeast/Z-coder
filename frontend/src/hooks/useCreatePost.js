@@ -35,7 +35,6 @@ const useCreatePost= () => {
       localStorage.setItem("Zcoder-post", JSON.stringify(data));
       //context
       setAuthUser(data);
-      console.log("useCreatePost.js", data);
     } catch (error) {
       toast.error(error.message);
     } finally {
@@ -47,7 +46,6 @@ const useCreatePost= () => {
 export default useCreatePost;
 
 function handleInputErrors({ question, code, privacy }) {
-    console.log(question,code,privacy);
   if (!question || !code || !privacy) {
     toast.error("Please fill all the fields");
     return false;

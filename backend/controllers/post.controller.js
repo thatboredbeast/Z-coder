@@ -7,7 +7,6 @@ export const createPost = async (req, res) => {
     const { code } = req.body;
     const { privacy } = req.body;
     const userId = req.user._id.toString();
-    console.log(req.body);
     const user = await User.findById(userId);
     if (!user) return res.status(404).json({ message: "User not found" });
 
